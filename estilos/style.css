@@ -45,3 +45,20 @@ body{
     font-size:20px;
     color: #FFFFFF;
 }
+.escolha-o-lanche{
+    margin-top: 120px;
+    margin-bottom: 110px;
+    margin-left: 19px;
+    font-family: 'Righteous', cursive;
+    font-size:26px;
+}
+.escolha-o-lanche div{
+    width: 172px;
+    height: 216px;
+    background-color: red;
+    border-radius: 9px;
+}
+.escolha-o-lanche p{
+    margin-top: 30px;
+    margin-bottom:17px;
+}
