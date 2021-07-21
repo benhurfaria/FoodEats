@@ -1,5 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
+    background-color: #E5E5E5;
 }
 .topo{
     width: 100%;
@@ -25,8 +26,22 @@ body{
 .baixo{
     width:100%;
     height: 92px;
-    background-color: green;
+    background-color: #FFFFFF;
     position: fixed;
     bottom: 0;
     left:0;
+}
+.concluir-selecao{
+    width: 88%;
+    height: 66%;
+    background-color: #CBCBCB;
+    margin: 15px auto;
+    border-radius: 50px;
+    box-sizing: border-box;
+    padding:7px;
+}
+.concluir-selecao p{
+    text-align: center;
+    font-size:20px;
+    color: #FFFFFF;
 }
