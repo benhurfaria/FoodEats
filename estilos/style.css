@@ -50,13 +50,54 @@ body{
     margin-bottom: 110px;
     margin-left: 19px;
     font-family: 'Righteous', cursive;
+    color:#333333;
     font-size:26px;
 }
-.escolha-o-lanche div{
+.escolha-o-lanche > div{
     width: 172px;
-    height: 216px;
-    background-color: red;
+    background-color: #FFFFFF;
     border-radius: 9px;
+}
+.comida{
+    height: 216px;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    padding-left: 17px;
+    border:1px solid #e6e6e6;
+}
+.comida img{
+    width: 144px;
+    height: 87px;
+    margin: 10px auto;
+}
+.bebida img{
+    width:144px;
+    height: 87px;
+    margin:10px auto;
+}
+.comida h1{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    margin: 5px auto;
+}
+.comida h2{
+    font-size:16px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin: 10px auto;
+}
+.comida h3{
+    font-size:16px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom:13px;
+}
+.bebida{
+    height: 202px;
+}
+.sobremesa{
+    height: 197px;
 }
 .escolha-o-lanche p{
     margin-top: 30px;
