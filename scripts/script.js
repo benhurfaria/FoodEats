@@ -1,4 +1,12 @@
 let contador = 0;
+let comida;
+let bebida;
+let sobremesa;
+let total = 0;
+let precoComida;
+let precoBebida;
+let precoSobremesa;
+
 
 function selecionarItem(elemento){
 
@@ -11,6 +19,12 @@ function selecionarItem(elemento){
 
     contador++;
     elemento.classList.add("verdinho");
+
+    
+    const precoComida1 = document.querySelector(".comida .verdinho .fmtH4");
+    const p = Number(parseFloat((precoComida1.innerHTML).replace(',', '.')));
+    total += p;
+    
 
     if(contador === 3){
         const elemento = document.querySelector(".concluir-selecao");
@@ -31,6 +45,10 @@ function selecionarItemBebida(elemento){
     contador++;
     elemento.classList.add("verdinho");
 
+    
+    const precoBebida1 = document.querySelector(".bebida .verdinho .fmtH4");
+    const p = Number(parseFloat((precoBebida1.innerHTML).replace(',', '.')));
+    total += p;
     if(contador === 3){
         const elemento = document.querySelector(".concluir-selecao");
         elemento.innerHTML = "<p>Fechar pedido</p>";
@@ -48,7 +66,11 @@ function selecionarItemSobremesa(elemento){
 
     contador++;
     elemento.classList.add("verdinho");
-    
+
+    const precoBebida1 = document.querySelector(".sobremesa .verdinho .fmtH4");
+    const p = Number(parseFloat((precoBebida1.innerHTML).replace(',', '.')));
+    total += p;
+
     if(contador === 3){
         const elemento = document.querySelector(".concluir-selecao");
         elemento.innerHTML = "<p>Fechar pedido</p>";
