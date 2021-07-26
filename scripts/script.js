@@ -3,9 +3,9 @@ let comida;
 let bebida;
 let sobremesa;
 let total = 0;
-let precoComida;
-let precoBebida;
-let precoSobremesa;
+let precoComida = 0;
+let precoBebida = 0;
+let precoSobremesa = 0;
 
 
 function selecionarItem(elemento){
@@ -14,6 +14,8 @@ function selecionarItem(elemento){
     
     if(elementoMarcado !== null){
         contador--;
+        comida = "";
+        total -= precoComida;
         elementoMarcado.classList.remove("verdinho");
     }
 
@@ -22,14 +24,16 @@ function selecionarItem(elemento){
 
     
     const precoComida1 = document.querySelector(".comida .verdinho .fmtH4");
-    const p = Number(parseFloat((precoComida1.innerHTML).replace(',', '.')));
-    total += p;
+    precoComida = Number(parseFloat((precoComida1.innerHTML).replace(',', '.')));
+    total += precoComida;
     
+    const elementoMarcadoComida2 = document.querySelector(".comida .verdinho .fmtH1");
+    comida = elementoMarcadoComida2.innerHTML;
 
     if(contador === 3){
-        const elemento = document.querySelector(".concluir-selecao");
-        elemento.innerHTML = "<p>Fechar pedido</p>";
-        elemento.classList.add("concluir-compra");
+        const elementoComida = document.querySelector(".concluir-selecao");
+        montadorString(elementoComida);
+        elementoComida.classList.add("concluir-compra");
     }
 }
 
@@ -39,6 +43,8 @@ function selecionarItemBebida(elemento){
 
     if(elementoMarcado !== null){
         contador--;
+        bebida = "";
+        total -= precoBebida;
         elementoMarcado.classList.remove("verdinho");
     }
 
@@ -47,12 +53,16 @@ function selecionarItemBebida(elemento){
 
     
     const precoBebida1 = document.querySelector(".bebida .verdinho .fmtH4");
-    const p = Number(parseFloat((precoBebida1.innerHTML).replace(',', '.')));
-    total += p;
+    precoBebida = Number(parseFloat((precoBebida1.innerHTML).replace(',', '.')));
+    total += precoBebida;
+
+    const elementoMarcadoBebida2 = document.querySelector(".bebida .verdinho .fmtH1");
+    bebida = elementoMarcadoBebida2.innerHTML;
+
     if(contador === 3){
-        const elemento = document.querySelector(".concluir-selecao");
-        elemento.innerHTML = "<p>Fechar pedido</p>";
-        elemento.classList.add("concluir-compra");
+        const elementoBebida = document.querySelector(".concluir-selecao");
+        montadorString(elementoBebida);
+        elementoBebida.classList.add("concluir-compra");
     }
 }
 
@@ -61,19 +71,32 @@ function selecionarItemSobremesa(elemento){
     
     if(elementoMarcado !== null){
         contador--;
+        sobremesa = "";
+        total -= precoSobremesa
         elementoMarcado.classList.remove("verdinho");
     }
 
     contador++;
     elemento.classList.add("verdinho");
 
-    const precoBebida1 = document.querySelector(".sobremesa .verdinho .fmtH4");
-    const p = Number(parseFloat((precoBebida1.innerHTML).replace(',', '.')));
-    total += p;
+    const precoSobremesa1 = document.querySelector(".sobremesa .verdinho .fmtH4");
+    precoSobremesa = Number(parseFloat((precoSobremesa1.innerHTML).replace(',', '.')));
+    total += precoSobremesa;
+
+    const elementoMarcadoSobremesa2 = document.querySelector(".sobremesa .verdinho .fmtH1");
+    sobremesa = elementoMarcadoSobremesa2.innerHTML;
 
     if(contador === 3){
-        const elemento = document.querySelector(".concluir-selecao");
-        elemento.innerHTML = "<p>Fechar pedido</p>";
-        elemento.classList.add("concluir-compra");
+        const elementoSobremesa = document.querySelector(".concluir-selecao");
+        montadorString(elementoSobremesa);
+        elementoSobremesa.classList.add("concluir-compra");
     }
+}
+
+function montadorString(elemento){
+    let minhaString = `Olá, gostaria de fazer o pedido:\n - Prato: ${comida} \n - Bebida: ${bebida} \n - Sobremesa: ${sobremesa} \n Total: R$ ${total.toFixed(2)}`;
+                            
+
+    let transformarTexto = encodeURIComponent(minhaString);
+    elemento.innerHTML = `<a href="https://wa.me/5562993822865?text=${transformarTexto}" target="_blank"><p>Fechar pedido</p></a>`;
 }
