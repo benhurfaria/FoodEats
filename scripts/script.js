@@ -12,6 +12,7 @@ function selecionarItem(elemento){
 
     const elementoMarcado = document.querySelector(".comida .verdinho");
     const elementoIcone = document.querySelector(".comida .verdinho ion-icon");
+    /*verificando a existencia de um elemento ja selecionado */
     if(elementoMarcado !== null){
         contador--;
         comida = "";
@@ -45,7 +46,7 @@ function selecionarItemBebida(elemento){
 
     const elementoMarcado = document.querySelector(".bebida .verdinho");
     const elementoIcone = document.querySelector(".bebida .verdinho ion-icon");
-
+    /*verificando a existencia de um elemento ja selecionado */
     if(elementoMarcado !== null){
         contador--;
         bebida = "";
@@ -78,7 +79,7 @@ function selecionarItemBebida(elemento){
 function selecionarItemSobremesa(elemento){
     const elementoMarcado = document.querySelector(".sobremesa .verdinho");
     const elementoIcone = document.querySelector(".sobremesa .verdinho ion-icon");
-
+    /*verificando a existencia de um elemento ja selecionado */
     if(elementoMarcado !== null){
         contador--;
         sobremesa = "";
@@ -106,11 +107,11 @@ function selecionarItemSobremesa(elemento){
         elementoSobremesa.classList.add("concluir-compra");
     }
 }
-
+/*funcao para verificar transformar a string desejada na string para o link */
 function montadorString(elemento){
     let minhaString = `Olá, gostaria de fazer o pedido:\n - Prato: ${comida} \n - Bebida: ${bebida} \n - Sobremesa: ${sobremesa} \n Total: R$ ${total.toFixed(2)}`;
                             
 
     let transformarTexto = encodeURIComponent(minhaString);
-    elemento.innerHTML = `<a href="https://wa.me/5562993822865?text=${transformarTexto}" target="_blank"><p>Fechar pedido</p></a>`;
+    elemento.innerHTML = `<a href="https://wa.me/5562998619651?text=${transformarTexto}" target="_blank"><p>Fechar pedido</p></a>`;
 }
