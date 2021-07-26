@@ -11,17 +11,18 @@ let precoSobremesa = 0;
 function selecionarItem(elemento){
 
     const elementoMarcado = document.querySelector(".comida .verdinho");
-    
+    const elementoIcone = document.querySelector(".comida .verdinho ion-icon");
     if(elementoMarcado !== null){
         contador--;
         comida = "";
         total -= precoComida;
         elementoMarcado.classList.remove("verdinho");
+        elementoIcone.classList.toggle("escondido");
     }
 
     contador++;
     elemento.classList.add("verdinho");
-
+    
     
     const precoComida1 = document.querySelector(".comida .verdinho .fmtH4");
     precoComida = Number(parseFloat((precoComida1.innerHTML).replace(',', '.')));
@@ -29,6 +30,9 @@ function selecionarItem(elemento){
     
     const elementoMarcadoComida2 = document.querySelector(".comida .verdinho .fmtH1");
     comida = elementoMarcadoComida2.innerHTML;
+
+    const elementoIconeNovo = document.querySelector(".comida .verdinho ion-icon");
+    elementoIconeNovo.classList.toggle("escondido");
 
     if(contador === 3){
         const elementoComida = document.querySelector(".concluir-selecao");
@@ -40,12 +44,14 @@ function selecionarItem(elemento){
 function selecionarItemBebida(elemento){
 
     const elementoMarcado = document.querySelector(".bebida .verdinho");
+    const elementoIcone = document.querySelector(".bebida .verdinho ion-icon");
 
     if(elementoMarcado !== null){
         contador--;
         bebida = "";
         total -= precoBebida;
         elementoMarcado.classList.remove("verdinho");
+        elementoIcone.classList.toggle("escondido");
     }
 
     contador++;
@@ -59,6 +65,9 @@ function selecionarItemBebida(elemento){
     const elementoMarcadoBebida2 = document.querySelector(".bebida .verdinho .fmtH1");
     bebida = elementoMarcadoBebida2.innerHTML;
 
+    const elementoIconeNovo = document.querySelector(".bebida .verdinho ion-icon");
+    elementoIconeNovo.classList.toggle("escondido");
+
     if(contador === 3){
         const elementoBebida = document.querySelector(".concluir-selecao");
         montadorString(elementoBebida);
@@ -68,12 +77,14 @@ function selecionarItemBebida(elemento){
 
 function selecionarItemSobremesa(elemento){
     const elementoMarcado = document.querySelector(".sobremesa .verdinho");
-    
+    const elementoIcone = document.querySelector(".sobremesa .verdinho ion-icon");
+
     if(elementoMarcado !== null){
         contador--;
         sobremesa = "";
         total -= precoSobremesa
         elementoMarcado.classList.remove("verdinho");
+        elementoIcone.classList.toggle("escondido");
     }
 
     contador++;
@@ -85,6 +96,9 @@ function selecionarItemSobremesa(elemento){
 
     const elementoMarcadoSobremesa2 = document.querySelector(".sobremesa .verdinho .fmtH1");
     sobremesa = elementoMarcadoSobremesa2.innerHTML;
+
+    const elementoIconeNovo = document.querySelector(".sobremesa .verdinho ion-icon");
+    elementoIconeNovo.classList.toggle("escondido");
 
     if(contador === 3){
         const elementoSobremesa = document.querySelector(".concluir-selecao");
